@@ -1,10 +1,3 @@
-/**
-* Template Name: Personal - v2.1.0
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -19,8 +12,50 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: url('../img/background.gif') no-repeat center center fixed;
+  background: url('https://youtu.be/zyZBb-NTY4w') no-repeat center center fixed;
   background-size: cover;
+}
+
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none; /* Prevents clicking on the video */
+  opacity: 0.85; /* Makes the video slightly transparent */
+}
+
+/* Optional overlay to darken the video for better text readability */
+#video-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+  z-index: 1;
+}
+
+/* Style for the iframe itself */
+#video-background iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Also prevent clicks on the iframe */
+}
+
+/* For mobile considerations - may need tweaking based on your layout */
+@media (max-width: 768px) {
+  #video-background iframe {
+    width: auto;
+    height: 100vh;
+  }
 }
 
 
