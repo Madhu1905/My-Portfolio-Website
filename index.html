@@ -44,7 +44,39 @@
 </head>
 
 <body>
-  
+  <div id="video-background">
+    <!-- All your existing content -->
+    
+    <script>
+      // YouTube background code
+      document.addEventListener('DOMContentLoaded', function() {
+          const videoId = 'zyZBb-NTY4w';
+          const videoContainer = document.getElementById('video-background');
+          const iframe = document.createElement('iframe');
+          iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&showinfo=0&rel=0&enablejsapi=1&disablekb=1&modestbranding=1&iv_load_policy=3`);
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allowfullscreen', 'true');
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          videoContainer.appendChild(iframe);
+          
+          function resizeVideo() {
+              const aspectRatio = 16/9;
+              const windowWidth = window.innerWidth;
+              const windowHeight = window.innerHeight;
+              let width = windowWidth;
+              let height = windowWidth / aspectRatio;
+              if (height < windowHeight) {
+                  height = windowHeight;
+                  width = windowHeight * aspectRatio;
+              }
+              iframe.style.width = `${width}px`;
+              iframe.style.height = `${height}px`;
+          }
+          resizeVideo();
+          window.addEventListener('resize', resizeVideo);
+      });
+      </script>
+  </div>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
